@@ -1,25 +1,29 @@
-import logo from './logo.svg'
-import './App.css'
+import logo from './logo.svg';
+import './App.css';
+import styled, { keyframes } from 'styled-components';
+
+import HomePage from '../src/pages/homePage';
+
+const dropDownAnimation = keyframes`
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+`;
+
+const Container = styled.div`
+  animation: ${dropDownAnimation} 3s linear;
+`;
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    TEST{' '}
-                </a>
-            </header>
-        </div>
-    )
+  return (
+    <div className="App">
+      <Container></Container>
+      <HomePage/>
+    </div>
+  );
 }
 
-export default App
+export default App;
