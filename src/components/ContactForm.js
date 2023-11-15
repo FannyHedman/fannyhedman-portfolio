@@ -10,13 +10,20 @@ const ContactForm = () => {
                 Contact me through this form or at fannyhedmans@gmail.com
             </ContactText>
             <form name="contact" method="post">
-                <input type="hidden" name="form-name" value="contact" />
-                <div className="input-group">
-                    <input type="email" name="email" />
-                    <textarea name="message"></textarea>
-                </div>
-                <button type="submit">Send</button>
-            </form>
+          <input type="hidden" name="form-name" value="contact" />
+          <p>
+            <label>Your Name: <input type="text" name="name"/></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email"/></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
         </ContactFormContainer>
     )
 }
