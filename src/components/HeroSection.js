@@ -17,7 +17,7 @@ const HeroSection = () => {
                 <TestDiv
                     className={shouldAnimate ? 'drop-down-word' : ''}
                 ></TestDiv>
-                <Title>Frontend Developer TEST</Title>
+                <Title>Frontend Developer</Title>
             </HeadingDiv>
             <PresentationDiv>
                 <Presentation>
