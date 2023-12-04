@@ -7,7 +7,6 @@ const HeroSection = () => {
     const [shouldAnimate, setShouldAnimate] = useState(false)
 
     useEffect(() => {
-        // Trigger the animation when the component mounts
         setShouldAnimate(true)
     }, [])
 
