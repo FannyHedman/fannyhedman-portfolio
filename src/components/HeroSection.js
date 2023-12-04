@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { primaryColor, secondaryColor, textColor } from '../styles/colors'
+import { motion } from 'framer-motion'
 
 const HeroSection = () => {
-
     const [shouldAnimate, setShouldAnimate] = useState(false)
 
     useEffect(() => {
@@ -16,16 +16,36 @@ const HeroSection = () => {
                 <TestDiv
                     className={shouldAnimate ? 'drop-down-word' : ''}
                 ></TestDiv>
-                <Title>Frontend Developer</Title>
+                <motion.div
+                    initial={{ rotate: -180, scale: 1 }}
+                    animate={{ rotate: 180, scale: -1 }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 120,
+                        damping: 10
+                    }}
+                >
+                    <Title className="split">Frontend Developer</Title>
+                </motion.div>
             </HeadingDiv>
-            <PresentationDiv>
-                <Presentation>
-                    Hello! I'm Fanny, a Stockholm based frontend developer. I'm
-                    passionate about coding and creating, eager to gain
-                    professional experience and expand my web development
-                    skills.{' '}
-                </Presentation>
-            </PresentationDiv>
+            <motion.div
+                initial={{ x: '100%', rotate: 90, scale: 0 }}
+                animate={{ x: 0, rotate: 180, scale: -1 }}
+                transition={{
+                    type: 'spring',
+                    stiffness: 600,
+                    damping: 100
+                }}
+            >
+                <PresentationDiv>
+                    <Presentation>
+                        Hello! I'm Fanny, a Stockholm based frontend developer.
+                        I'm passionate about coding and creating, eager to gain
+                        professional experience and expand my web development
+                        skills.{' '}
+                    </Presentation>
+                </PresentationDiv>
+            </motion.div>
         </Container>
     )
 }
@@ -85,7 +105,7 @@ const Title = styled.h1`
     font-family: 'DM Serif Display', serif;
     font-size: 72px;
     color: ${textColor};
-    ${fadeInAnimation}
+    /* ${fadeInAnimation} */
 
     @media (max-width: 991px) {
         font-size: 64px;
@@ -108,10 +128,10 @@ const Presentation = styled.p`
         font-size: 28px;
     }
 
-        /* Mobile */
-        @media (max-width: 767px) {
-          font-size: 18px;
-          font-weight: bold;
+    /* Mobile */
+    @media (max-width: 767px) {
+        font-size: 18px;
+        font-weight: bold;
     }
 `
 
