@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { primaryColor, secondaryColor, textColor } from '../styles/colors'
 import restaurant from '../assets/restaurant_css.png'
 import webshop1 from '../assets/webshop.png'
-import webshop2 from '../assets/webshop_vue.png'
+import webshop2 from '../assets/socks_webshop.png'
 import internship from '../assets/internship.png'
 import datingApp from '../assets/datingApp.png'
 import figma2 from '../assets/figma2.png'
@@ -12,7 +12,6 @@ const MyProjects = () => {
     return (
         <ProjectsContainer id="projects">
             <ProjectHeading>What I've been up to</ProjectHeading>
-            {/* First Row */}
             <Row>
                 <Column>
                     <ImageContainer>
@@ -37,12 +36,23 @@ const MyProjects = () => {
                         <ProjectImage src={webshop2} alt="Project 2" />
                         <ImageContent>
                             <ImageText>
-                                In a recent school project, we created a Vue.js
-                                webshop for socks using Vuetify and Vite. We
-                                managed to design an interactive and visually
-                                appealing online store. This project was a
-                                valuable learning experience in front-end
-                                development as well as e-commerce.{' '}
+                                An online sock store I developed using React.
+                                This project reflects my ongoing journey in coding and
+                                design, aiming for simplicity and a pleasant
+                                user experience.{' '}
+                                <a
+                                    href="https://vintage-shop.netlify.app"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        color: 'black',
+                                        textDecoration: 'none',
+                                        fontWeight: 'bold'
+
+                                    }}
+                                >
+                                    Visit site
+                                </a>{' '}
                             </ImageText>
                         </ImageContent>
                     </ImageContainer>
@@ -64,7 +74,6 @@ const MyProjects = () => {
                     </ImageContainer>
                 </Column>
             </Row>
-            {/* Second Row */}
             <Row>
                 <Column>
                     <ImageContainer>
